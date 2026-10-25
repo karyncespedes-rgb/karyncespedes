@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Karyn Céspedes | Jefa de Administración y Finanzas</title>
+<meta name="description" content="Perfil profesional de Karyn Céspedes: administración, finanzas corporativas, contabilidad y gestión de equipos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   PALETA (inspirada en la plantilla de referencia)
+   Pantone aproximado: 7645 C  -> #B98590
+   Verificar el tono exacto con una guía Pantone física.
+   ========================================================== */
+:root{
+  --rosa:#B98590;
+  --rosa-oscuro:#8A5A66;
+  --rosa-profundo:#6E4550;
+  --rosa-claro:#EBD9DD;
+  --fondo:#F4F4F4;
+  --superficie:#FFFFFF;
+  --texto:#2E2A2B;
+  --texto-suave:#6B6264;
+  --linea:#D9CFD1;
+  --sombra:0 10px 30px -12px rgba(110,69,80,.28);
+  --radio:18px;
+  --serif:'DM Serif Display', Georgia, serif;
+  --sans:'Nunito Sans', 'Segoe UI', Arial, sans-serif;
+  --nav-h:68px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px)}
+body{
+  font-family:var(--sans);
+  background:var(--fondo);
+  color:var(--texto);
+  line-height:1.65;
+  font-size:1rem;
+  overflow-x:hidden;
+}
+img,svg{max-width:100%;display:block}
+a{color:var(--rosa-oscuro);text-decoration:none}
+a:hover{text-decoration:underline}
+:focus-visible{outline:3px solid var(--rosa);outline-offset:3px;border-radius:6px}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+.contenedor{width:min(1120px,92%);margin-inline:auto}
+section{padding:clamp(56px,8vw,96px) 0}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:50;
+  background:rgba(244,244,244,.9);backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:border-color .3s, box-shadow .3s;
+}
+.nav.scrolled{border-color:var(--linea);box-shadow:0 4px 18px -12px rgba(0,0,0,.25)}
+.nav .contenedor{height:100%;display:flex;align-items:center;justify-content:space-between}
+.logo{
+  width:44px;height:44px;border-radius:50%;background:var(--rosa);color:#fff;
+  display:grid;place-items:center;font-family:var(--serif);font-size:1.05rem;letter-spacing:.5px;
+}
+.nav-links{display:flex;gap:6px;list-style:none}
+.nav-links a{
+  color:var(--texto);padding:8px 14px;border-radius:999px;font-weight:600;font-size:.95rem;
+  transition:background .25s,color .25s;
+}
+.nav-links a:hover{background:var(--rosa-claro);text-decoration:none}
+.nav-links a.activo{background:var(--rosa);color:#fff}
+.menu-btn{display:none;width:44px;height:44px;border-radius:12px;place-items:center}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--texto);margin:4px 0;transition:transform .3s,opacity .3s}
+.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
+.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100vh;display:flex;align-items:center;padding-top:var(--nav-h);
+  position:relative;overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.hero h1{
+  font-family:var(--serif);font-weight:400;color:var(--rosa);
+  font-size:clamp(2.6rem,6vw,4.6rem);line-height:1.05;margin-bottom:12px;
+}
+.hero .cargo{font-size:clamp(1.05rem,2vw,1.3rem);color:var(--texto);font-weight:600;margin-bottom:6px}
+.hero .sub{color:var(--texto-suave);margin-bottom:28px}
+.hero .sub strong{color:var(--texto)}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;
+  font-weight:700;transition:transform .2s, box-shadow .2s, background .2s;
+}
+.btn-principal{background:var(--rosa);color:#fff;box-shadow:0 8px 20px -10px var(--rosa-profundo)}
+.btn-principal:hover{transform:translateY(-2px);background:var(--rosa-oscuro);text-decoration:none}
+.btn-secundario{border:2px solid var(--rosa);color:var(--rosa-oscuro)}
+.btn-secundario:hover{background:var(--rosa-claro);text-decoration:none}
+
+.retrato{position:relative;justify-self:center;width:min(360px,80vw);aspect-ratio:1}
+.retrato .circulo{
+  position:absolute;inset:0;border-radius:50%;background:var(--rosa);
+  display:grid;place-items:center;color:#fff;font-family:var(--serif);
+  font-size:clamp(4rem,9vw,6rem);box-shadow:var(--sombra);
+  animation:aparecer 1s cubic-bezier(.2,.7,.2,1) both;
+}
+.retrato .anillo{
+  position:absolute;inset:-14px;border-radius:50%;border:1.5px dashed var(--rosa);
+  opacity:.6;animation:girar 40s linear infinite;
+}
+.retrato .etiqueta{
+  position:absolute;bottom:6%;right:-4%;background:var(--superficie);
+  padding:10px 16px;border-radius:14px;box-shadow:var(--sombra);font-size:.9rem;
+  animation:flotar 5s ease-in-out infinite;
+}
+.retrato .etiqueta b{color:var(--rosa-oscuro)}
+
+.contadores{display:flex;gap:28px;margin-top:40px;flex-wrap:wrap}
+.contador .num{font-family:var(--serif);font-size:2.4rem;color:var(--rosa-oscuro);line-height:1}
+.contador .txt{font-size:.9rem;color:var(--texto-suave)}
+
+.scroll-indicador{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  width:26px;height:42px;border:2px solid var(--rosa);border-radius:20px;
+}
+.scroll-indicador::after{
+  content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;margin-left:-2px;
+  background:var(--rosa);border-radius:2px;animation:bajar 1.8s infinite;
+}
+
+/* ---------- TÍTULOS DE SECCIÓN ---------- */
+.titulo-seccion{display:flex;align-items:center;gap:18px;margin-bottom:40px}
+.titulo-seccion h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.8rem,4vw,2.5rem);color:var(--texto)}
+.titulo-seccion .linea{flex:1;height:2px;background:var(--rosa);border-radius:2px;transform-origin:left;transform:scaleX(0);transition:transform 1s ease .2s}
+.visible .titulo-seccion .linea,.titulo-seccion.visible .linea{transform:scaleX(1)}
+
+/* ---------- PERFIL ---------- */
+.perfil-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.perfil-texto p{margin-bottom:16px;color:var(--texto)}
+.perfil-texto p:first-child::first-letter{font-family:var(--serif);color:var(--rosa);font-size:3.2rem;float:left;line-height:.9;margin:6px 10px 0 0}
+.tarjeta-info{background:var(--superficie);border-radius:var(--radio);box-shadow:var(--sombra);padding:28px;border-left:6px solid var(--rosa)}
+.tarjeta-info h3{font-family:var(--serif);font-weight:400;color:var(--rosa-oscuro);font-size:1.4rem;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  background:var(--rosa-claro);color:var(--rosa-profundo);padding:8px 14px;border-radius:999px;
+  font-size:.92rem;font-weight:600;transition:transform .2s, background .2s;
+}
+.chip:hover{transform:translateY(-2px);background:var(--rosa);color:#fff}
+
+/* ---------- EXPERIENCIA ---------- */
+.filtros{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
+.filtro{
+  padding:9px 18px;border-radius:999px;border:2px solid var(--rosa);color:var(--rosa-oscuro);
+  font-weight:700;font-size:.92rem;transition:background .25s,color .25s;
+}
+.filtro[aria-pressed="true"],.filtro:hover{background:var(--rosa);color:#fff}
+
+.timeline{position:relative;padding-left:34px;list-style:none}
+.timeline::before{
+  content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;
+  background:linear-gradient(var(--rosa),var(--rosa-claro));
+}
+.item{position:relative;margin-bottom:22px;transition:opacity .4s, transform .4s}
+.item.oculto{display:none}
+.item::before{
+  content:"";position:absolute;left:-32px;top:26px;width:16px;height:16px;border-radius:50%;
+  background:var(--fondo);border:3px solid var(--rosa);
+}
+.item.activo::before{background:var(--rosa)}
+.tarjeta{
+  background:var(--superficie);border-radius:var(--radio);box-shadow:var(--sombra);overflow:hidden;
+}
+.tarjeta-cabecera{
+  width:100%;text-align:left;padding:22px 26px;display:flex;justify-content:space-between;gap:16px;align-items:center;
+}
+.tarjeta-cabecera:hover{background:#FBF7F8}
+.cabecera-texto h3{font-size:1.12rem;color:var(--texto)}
+.cabecera-texto .empresa{color:var(--rosa-oscuro);font-weight:700;font-size:.95rem}
+.cabecera-texto .fecha{font-size:.85rem;color:var(--texto-suave);margin-top:2px}
+.flecha{
+  flex:none;width:36px;height:36px;border-radius:50%;background:var(--rosa-claro);
+  display:grid;place-items:center;transition:transform .4s, background .3s;
+}
+.flecha svg{width:16px;height:16px;stroke:var(--rosa-profundo);fill:none;stroke-width:2.5}
+.tarjeta-cabecera[aria-expanded="true"] .flecha{transform:rotate(180deg);background:var(--rosa)}
+.tarjeta-cabecera[aria-expanded="true"] .flecha svg{stroke:#fff}
+.detalle{
+  display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s ease;
+}
+.detalle.abierto{grid-template-rows:1fr}
+.detalle > div{overflow:hidden}
+.detalle-contenido{padding:0 26px 24px;border-top:1px solid var(--linea)}
+.detalle-contenido ul{margin-top:14px;padding-left:20px}
+.detalle-contenido li{margin-bottom:6px;color:var(--texto)}
+.ubicacion{margin-top:12px;font-size:.9rem;color:var(--texto-suave)}
+.badge{
+  display:inline-block;margin-top:14px;background:var(--rosa-claro);color:var(--rosa-profundo);
+  padding:4px 12px;border-radius:999px;font-size:.8rem;font-weight:700;
+}
+
+/* ---------- EDUCACIÓN ---------- */
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.edu{
+  background:var(--superficie);border-radius:var(--radio);padding:26px;box-shadow:var(--sombra);
+  border-top:5px solid var(--rosa);transition:transform .3s;
+}
+.edu:hover{transform:translateY(-4px)}
+.edu .tipo{font-size:.8rem;color:var(--rosa-oscuro);font-weight:700;margin-bottom:6px}
+.edu h3{font-size:1.05rem;margin-bottom:6px}
+.edu .periodo{font-size:.88rem;color:var(--texto-suave)}
+
+/* ---------- HABILIDADES ---------- */
+.habilidades-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}
+.panel{background:var(--superficie);border-radius:var(--radio);padding:30px;box-shadow:var(--sombra)}
+.panel h3{font-family:var(--serif);font-weight:400;color:var(--rosa-oscuro);font-size:1.45rem;margin-bottom:18px}
+.lista-habil{list-style:none;display:grid;gap:14px}
+.lista-habil li{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;font-size:.98rem}
+.barra{grid-column:1/-1;height:8px;border-radius:8px;background:var(--rosa-claro);overflow:hidden}
+.barra span{
+  display:block;height:100%;width:0;border-radius:8px;
+  background:linear-gradient(90deg,var(--rosa),var(--rosa-oscuro));
+  transition:width 1.4s cubic-bezier(.2,.7,.2,1);
+}
+.lista-habil .pct{font-weight:700;color:var(--rosa-oscuro);font-size:.9rem}
+.cert{
+  display:flex;gap:14px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--linea);
+}
+.cert:last-child{border-bottom:none}
+.cert .icono{
+  flex:none;width:44px;height:44px;border-radius:12px;background:var(--rosa);color:#fff;
+  display:grid;place-items:center;font-weight:700;
+}
+.cert h4{font-size:1rem;margin-bottom:2px}
+.cert p{font-size:.9rem;color:var(--texto-suave)}
+.idiomas{margin-top:22px;padding-top:18px;border-top:1px solid var(--linea)}
+.idiomas p{margin-bottom:6px}
+
+/* ---------- CONTACTO ---------- */
+.contacto{background:var(--rosa);color:#fff}
+.contacto .titulo-seccion h2{color:#fff}
+.contacto .titulo-seccion .linea{background:#fff}
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contacto-item{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);
+  border-radius:var(--radio);padding:24px;display:flex;flex-direction:column;gap:10px;
+  transition:background .3s, transform .3s;
+}
+.contacto-item:hover{background:rgba(255,255,255,.22);transform:translateY(-3px)}
+.contacto-item small{opacity:.85;text-transform:none;font-size:.85rem}
+.contacto-item .valor{font-size:1.1rem;font-weight:700;word-break:break-word;color:#fff}
+.contacto-item a{color:#fff}
+.copiar{
+  align-self:flex-start;margin-top:4px;background:#fff;color:var(--rosa-profundo);
+  padding:8px 16px;border-radius:999px;font-weight:700;font-size:.9rem;transition:transform .2s;
+}
+.copiar:hover{transform:scale(1.05)}
+
+/* ---------- FOOTER / UTILIDADES ---------- */
+footer{padding:28px 0;text-align:center;color:var(--texto-suave);font-size:.9rem}
+.volver{
+  position:fixed;right:22px;bottom:22px;width:48px;height:48px;border-radius:50%;
+  background:var(--rosa);color:#fff;display:grid;place-items:center;box-shadow:var(--sombra);
+  opacity:0;transform:translateY(20px);pointer-events:none;transition:opacity .3s, transform .3s;z-index:40;
+}
+.volver.visible{opacity:1;transform:none;pointer-events:auto}
+.volver svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:2.5}
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,140%);
+  background:var(--texto);color:#fff;padding:12px 22px;border-radius:999px;
+  box-shadow:var(--sombra);font-weight:600;z-index:60;transition:transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.toast.mostrar{transform:translate(-50%,0)}
+
+/* ---------- REVELADO AL DESPLAZAR ---------- */
+.revelar{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease}
+.revelar.visible{opacity:1;transform:none}
+
+/* ---------- ANIMACIONES ---------- */
+@keyframes aparecer{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+@keyframes girar{to{transform:rotate(360deg)}}
+@keyframes flotar{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes bajar{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(16px)}}
+
+/* ---------- RESPONSIVO ---------- */
+@media (max-width:920px){
+  .hero-grid,.perfil-grid,.habilidades-grid{grid-template-columns:1fr}
+  .hero{min-height:auto;padding-bottom:80px}
+  .retrato{order:-1;margin-bottom:10px}
+  .retrato .etiqueta{right:0}
+}
+@media (max-width:760px){
+  .menu-btn{display:grid}
+  .nav-links{
+    position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;
+    background:var(--fondo);padding:14px 4% 22px;border-bottom:1px solid var(--linea);
+    box-shadow:0 18px 30px -20px rgba(0,0,0,.3);
+    transform:translateY(-120%);opacity:0;transition:transform .4s ease, opacity .3s;pointer-events:none;
+  }
+  .nav-links.abierto{transform:none;opacity:1;pointer-events:auto}
+  .nav-links a{display:block;padding:12px 14px}
+  .contacto-grid{grid-template-columns:1fr}
+  .tarjeta-cabecera{padding:18px}
+  .detalle-contenido{padding:0 18px 20px}
+  .timeline{padding-left:26px}
+  .item::before{left:-24px}
+  .timeline::before{left:6px}
+}
+@media (max-width:420px){
+  .contadores{gap:18px}
+  .contador .num{font-size:2rem}
+  .btn{width:100%;justify-content:center}
+}
+
+/* ---------- MOVIMIENTO REDUCIDO ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .revelar{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVEGACIÓN ================= -->
+<header class="nav" id="nav">
+  <div class="contenedor">
+    <a href="#inicio" class="logo" aria-label="Ir al inicio">KC</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false" aria-controls="menuLinks">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="menuLinks">
+      <li><a href="#perfil">Perfil</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#educacion">Educación</a></li>
+      <li><a href="#habilidades">Habilidades</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="contenedor hero-grid">
+    <div>
+      <h1>Karyn Céspedes</h1>
+      <p class="cargo">Jefa de Administración y Finanzas</p>
+      <p class="sub">Finanzas corporativas · Contabilidad · Tesorería · Cobranzas · Personal · Facturación<br>
+        <strong>Lima, Perú</strong></p>
+      <div class="acciones">
+        <a href="#contacto" class="btn btn-principal">Contáctame</a>
+        <a href="#experiencia" class="btn btn-secundario">Ver experiencia</a>
+      </div>
+      <div class="contadores">
+        <div class="contador"><div class="num" data-meta="11">0</div><div class="txt">Años en Multimedical</div></div>
+        <div class="contador"><div class="num" data-meta="6">0</div><div class="txt">Empresas en mi trayectoria</div></div>
+        <div class="contador"><div class="num" data-meta="5">0</div><div class="txt">Formaciones académicas</div></div>
+      </div>
+    </div>
+
+    <div class="retrato" aria-hidden="true">
+      <div class="anillo"></div>
+      <div class="circulo">KC</div>
+      <div class="etiqueta"><b>Finanzas</b> &amp; Administración</div>
+    </div>
+  </div>
+  <div class="scroll-indicador" aria-hidden="true"></div>
+</section>
+
+<!-- ================= PERFIL ================= -->
+<section id="perfil">
+  <div class="contenedor">
+    <div class="titulo-seccion revelar"><h2>Perfil</h2><span class="linea"></span></div>
+    <div class="perfil-grid">
+      <div class="perfil-texto revelar">
+        <p>Soy una profesional en administración y contabilidad de empresas, especialista en integrar equipos de trabajo y gestionar proyectos con éxito en distintos sectores económicos.</p>
+        <p>He implementado sistemas de control y procesos contables que optimizan la precisión y eficiencia de las operaciones financieras, con una mayor visibilidad de los flujos de efectivo para la toma de decisiones.</p>
+        <p>Diseño nuevos modelos de negocio capaces de enfrentar entornos frágiles, impredecibles y complejos. Mi enfoque está en los resultados, las habilidades analíticas y la capacidad de decidir con criterio.</p>
+      </div>
+      <div class="tarjeta-info revelar">
+        <h3>Aptitudes principales</h3>
+        <div class="chips">
+          <span class="chip">Pensamiento crítico</span>
+          <span class="chip">Elaboración de presupuestos</span>
+          <span class="chip">Negociación con proveedores</span>
+          <span class="chip">Liderazgo</span>
+          <span class="chip">Toma de decisiones</span>
+          <span class="chip">Análisis financiero</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCIA ================= -->
+<section id="experiencia" style="padding-top:0">
+  <div class="contenedor">
+    <div class="titulo-seccion revelar"><h2>Experiencia laboral</h2><span class="linea"></span></div>
+
+    <div class="filtros revelar" role="group" aria-label="Filtrar experiencia">
+      <button class="filtro" data-filtro="todas" aria-pressed="true">Todas</button>
+      <button class="filtro" data-filtro="finanzas" aria-pressed="false">Finanzas y contabilidad</button>
+      <button class="filtro" data-filtro="gestion" aria-pressed="false">Gestión y administración</button>
+      <button class="filtro" data-filtro="operaciones" aria-pressed="false">Operaciones y minería</button>
+    </div>
+
+    <ol class="timeline" id="timeline">
+
+      <li class="item revelar activo" data-cat="finanzas gestion">
+        <div class="tarjeta">
+          <button class="tarjeta-cabecera" aria-expanded="true" aria-controls="d1">
+            <div class="cabecera-texto">
+              <h3>Jefa de administración y finanzas</h3>
+              <div class="empresa">Multimedical Supplies</div>
+              <div class="fecha">Agosto 2015 – Presente · 11 años 3 meses · Lima, Perú</div>
+            </div>
+            <span class="flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="detalle abierto" id="d1"><div>
+            <div class="detalle-contenido">
+              <p>Importación y comercialización de material médico. Responsable de tesorería, cobranzas, facturación, personal y contabilidad.</p>
+              <ul>
+                <li>Optimicé la gestión de cobranzas, recuperando deuda de 3 años de antigüedad y detectando malas gestiones.</li>
+                <li>Mejoré el proceso de facturación, ahorrando 2 horas hombre de un total de 9 horas de trabajo diarias.</li>
+                <li>Implementé el área de personal, asegurando el cumplimiento de la normativa laboral y de seguridad y salud en el trabajo.</li>
+                <li>Innové en tesorería con tecnología: el 100 % de las operaciones se realizan de forma digital.</li>
+              </ul>
+              <span class="badge">Logro destacado: 100 % digital</span>
+            </div>
+          </div></div>
+        </div>
+      </li>
+
+      <li class="item revelar" data-cat="finanzas">
+        <div class="tarjeta">
+          <button class="tarjeta-cabecera" aria-expanded="false" aria-controls="d2">
+            <div class="cabecera-texto">
+              <h3>Asistente de contabilidad</h3>
+              <div class="empresa">Minera Confianza S.A.C.</div>
+              <div class="fecha">Enero 2015 – Agosto 2015 · 8 meses · Lima, Perú</div>
+            </div>
+            <span class="flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="detalle" id="d2"><div>
+            <div class="detalle-contenido">
+              <ul>
+                <li>Organicé la gestión documentaria de compra de mineral, desde la liquidación de compra hasta la facturación del mineral procesado.</li>
+                <li>Aseguré la trazabilidad y el cumplimiento de las transacciones.</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+      </li>
+
+      <li class="item revelar" data-cat="finanzas gestion">
+        <div class="tarjeta">
+          <button class="tarjeta-cabecera" aria-expanded="false" aria-controls="d3">
+            <div class="cabecera-texto">
+              <h3>Contadora general</h3>
+              <div class="empresa">Roca y Arena S.A.C.</div>
+              <div class="fecha">Junio 2014 – Agosto 2014 · 3 meses · Cerro Colorado, Arequipa</div>
+            </div>
+            <span class="flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="detalle" id="d3"><div>
+            <div class="detalle-contenido">
+              <ul>
+                <li>Implementé el área contable y la organización administrativa y operativa en la cantera.</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+      </li>
+
+      <li class="item revelar" data-cat="operaciones gestion">
+        <div class="tarjeta">
+          <button class="tarjeta-cabecera" aria-expanded="false" aria-controls="d4">
+            <div class="cabecera-texto">
+              <h3>Asistente administrativa ejecutiva</h3>
+              <div class="empresa">Transportes Linea S.A. · Proyecto Minero Las Bambas</div>
+              <div class="fecha">Noviembre 2013 – Enero 2014 · 3 meses · Abancay, Apurímac</div>
+            </div>
+            <span class="flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="detalle" id="d4"><div>
+            <div class="detalle-contenido">
+              <ul>
+                <li>Asesoré a los proveedores de la comunidad en temas contables.</li>
+                <li>Controlé los tareos del personal del contratista.</li>
+                <li>Implementé seguridad y salud ocupacional en minería junto al equipo de seguridad del proyecto.</li>
+                <li>Coordiné la programación del transporte de personal de Cusco al proyecto.</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+      </li>
+
+      <li class="item revelar" data-cat="finanzas">
+        <div class="tarjeta">
+          <button class="tarjeta-cabecera" aria-expanded="false" aria-controls="d5">
+            <div class="cabecera-texto">
+              <h3>Contador superior de apoyo</h3>
+              <div class="empresa">GM Maquinarias S.A.C.</div>
+              <div class="fecha">Febrero 2010 – Octubre 2013 · 3 años 9 meses · Arequipa</div>
+            </div>
+            <span class="flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="detalle" id="d5"><div>
+            <div class="detalle-contenido">
+              <ul>
+                <li>Registro, control y análisis de cuentas contables.</li>
+                <li>Elaboración de estados financieros.</li>
+                <li>Declaración de impuestos ante la Sunat.</li>
+                <li>Coordinación y preparación de requerimientos de la Sunat.</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+      </li>
+
+      <li class="item revelar" data-cat="gestion operaciones">
+        <div class="tarjeta">
+          <button class="tarjeta-cabecera" aria-expanded="false" aria-controls="d6">
+            <div class="cabecera-texto">
+              <h3>Administradora</h3>
+              <div class="empresa">NEGESAP E.I.R.L. · Distribuidora de medicamentos</div>
+              <div class="fecha">Marzo 2006 – Enero 2010 · 3 años 11 meses · Arequipa</div>
+            </div>
+            <span class="flecha" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span>
+          </button>
+          <div class="detalle" id="d6"><div>
+            <div class="detalle-contenido">
+              <ul>
+                <li>Implementé el área administrativa y un sistema operativo.</li>
+                <li>Gestioné compras e inventarios.</li>
+                <li>Implementé BPA con DIREMID Arequipa.</li>
+                <li>Controlé al personal, pagos de remuneraciones y la programación de pagos a proveedores.</li>
+              </ul>
+            </div>
+          </div></div>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= EDUCACIÓN ================= -->
+<section id="educacion">
+  <div class="contenedor">
+    <div class="titulo-seccion revelar"><h2>Formación académica</h2><span class="linea"></span></div>
+    <div class="edu-grid">
+      <article class="edu revelar">
+        <div class="tipo">Posgrado</div>
+        <h3>Master of Business Administration (MBA), Negocios</h3>
+        <div class="periodo">CENTRUM PUCP · Mayo 2022 – Diciembre 2023</div>
+      </article>
+      <article class="edu revelar">
+        <div class="tipo">Máster internacional</div>
+        <h3>Innovación y Sostenibilidad</h3>
+        <div class="periodo">EADA Business School · Diciembre 2022 – Marzo 2023</div>
+      </article>
+      <article class="edu revelar">
+        <div class="tipo">Licenciatura</div>
+        <h3>Contabilidad y Gestión Empresarial</h3>
+        <div class="periodo">Universidad Andina Néstor Cáceres Velásquez · 2009 – 2011</div>
+      </article>
+      <article class="edu revelar">
+        <div class="tipo">Técnica</div>
+        <h3>Contabilidad y Gestión Empresarial</h3>
+        <div class="periodo">IST Honorio Delgado Espinoza, Arequipa · 2006 – 2008</div>
+      </article>
+      <article class="edu revelar">
+        <div class="tipo">Licenciatura</div>
+        <h3>Administración</h3>
+        <div class="periodo">Universidad Nacional de San Agustín de Arequipa · 1999 – 2003</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HABILIDADES ================= -->
+<section id="habilidades" style="padding-top:0">
+  <div class="contenedor">
+    <div class="titulo-seccion revelar"><h2>Habilidades y certificaciones</h2><span class="linea"></span></div>
+    <div class="habilidades-grid">
+      <div class="panel revelar">
+        <h3>Competencias clave</h3>
+        <ul class="lista-habil" id="listaHabil">
+          <li>Gestión de tesorería y cobranzas<span class="pct" hidden></span><div class="barra"><span data-nivel="92"></span></div></li>
+          <li>Contabilidad y estados financieros<div class="barra"><span data-nivel="90"></span></div></li>
+          <li>Elaboración de presupuestos<div class="barra"><span data-nivel="88"></span></div></li>
+          <li>Liderazgo de equipos<div class="barra"><span data-nivel="85"></span></div></li>
+          <li>Negociación con proveedores<div class="barra"><span data-nivel="84"></span></div></li>
+        </ul>
+        <div class="idiomas">
+          <p><strong>Idiomas</strong></p>
+          <p>Español: nativo</p>
+        </div>
+      </div>
+
+      <div class="panel revelar">
+        <h3>Certificaciones</h3>
+        <div class="cert">
+          <div class="icono">IA</div>
+          <div><h4>Inteligencia Artificial (IA): interacciones y prompts</h4><p>Uso práctico de la IA en el trabajo diario.</p></div>
+        </div>
+        <div class="cert">
+          <div class="icono">DL</div>
+          <div><h4>Autoridad, dirección y liderazgo</h4><p>Dirección de equipos y toma de decisiones.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section class="contacto" id="contacto">
+  <div class="contenedor">
+    <div class="titulo-seccion revelar"><h2>Contacto</h2><span class="linea"></span></div>
+    <div class="contacto-grid">
+      <div class="contacto-item revelar">
+        <small>Correo electrónico</small>
+        <span class="valor" id="correo">k_roxy1@hotmail.com</span>
+        <button class="copiar" data-copiar="k_roxy1@hotmail.com">Copiar correo</button>
+      </div>
+      <div class="contacto-item revelar">
+        <small>LinkedIn</small>
+        <a class="valor" href="https://www.linkedin.com/in/karyncespedes" target="_blank" rel="noopener">linkedin.com/in/karyncespedes</a>
+        <a class="copiar" href="https://www.linkedin.com/in/karyncespedes" target="_blank" rel="noopener" style="text-decoration:none">Ver perfil</a>
+      </div>
+      <div class="contacto-item revelar">
+        <small>Ubicación</small>
+        <span class="valor">Lima, Perú</span>
+      </div>
+      <div class="contacto-item revelar">
+        <small>Disponibilidad</small>
+        <span class="valor">Abierta a nuevas oportunidades</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="contenedor">© <span id="anio"></span> Karyn Céspedes · Perfil profesional</div>
+</footer>
+
+<button class="volver" id="volver" aria-label="Volver arriba">
+  <svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<div class="toast" id="toast" role="status" aria-live="polite">Correo copiado</div>
+
+<script>
+(() => {
+  const reduceMovimiento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Año automático en el pie ---------- */
+  document.getElementById('anio').textContent = new Date().getFullYear();
+
+  /* ---------- Menú móvil ---------- */
+  const menuBtn = document.getElementById('menuBtn');
+  const menuLinks = document.getElementById('menuLinks');
+  const alternarMenu = (abrir) => {
+    const estado = abrir ?? !menuLinks.classList.contains('abierto');
+    menuLinks.classList.toggle('abierto', estado);
+    menuBtn.setAttribute('aria-expanded', String(estado));
+    menuBtn.setAttribute('aria-label', estado ? 'Cerrar menú' : 'Abrir menú');
+  };
+  menuBtn.addEventListener('click', () => alternarMenu());
+  menuLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => alternarMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') alternarMenu(false); });
+
+  /* ---------- Barra de navegación al hacer scroll ---------- */
+  const nav = document.getElementById('nav');
+  const volver = document.getElementById('volver');
+  const onScroll = () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 20);
+    volver.classList.toggle('visible', y > 600);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  volver.addEventListener('click', () => window.scrollTo({ top: 0, behavior: reduceMovimiento ? 'auto' : 'smooth' }));
+
+  /* ---------- Enlace activo según la sección visible ---------- */
+  const enlaces = [...document.querySelectorAll('.nav-links a')];
+  const secciones = enlaces.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const obsActivo = new IntersectionObserver(entradas => {
+    entradas.forEach(en => {
+      if (en.isIntersecting) {
+        enlaces.forEach(a => a.classList.toggle('activo', a.getAttribute('href') === '#' + en.target.id));
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  secciones.forEach(s => obsActivo.observe(s));
+
+  /* ---------- Revelado al desplazar ---------- */
+  const obsRevelar = new IntersectionObserver((entradas, obs) => {
+    entradas.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.classList.add('visible');
+        obs.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.revelar').forEach(el => obsRevelar.observe(el));
+
+  /* ---------- Contadores animados ---------- */
+  const animarContador = (el) => {
+    const meta = parseInt(el.dataset.meta, 10);
+    if (reduceMovimiento) { el.textContent = meta + '+'; return; }
+    const inicio = performance.now(), duracion = 1600;
+    const paso = (t) => {
+      const p = Math.min((t - inicio) / duracion, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(meta * eased) + (p === 1 ? '+' : '');
+      if (p < 1) requestAnimationFrame(paso);
+    };
+    requestAnimationFrame(paso);
+  };
+  const obsContador = new IntersectionObserver((entradas, obs) => {
+    entradas.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.querySelectorAll('.num').forEach(animarContador);
+        obs.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('.contadores').forEach(c => obsContador.observe(c));
+
+  /* ---------- Barras de habilidades ---------- */
+  const obsBarras = new IntersectionObserver((entradas, obs) => {
+    entradas.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.querySelectorAll('.barra span').forEach(b => b.style.width = b.dataset.nivel + '%');
+        obs.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  const listaHabil = document.getElementById('listaHabil');
+  if (listaHabil) obsBarras.observe(listaHabil);
+
+  /* ---------- Acordeón de experiencia ---------- */
+  document.querySelectorAll('.tarjeta-cabecera').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const detalle = document.getElementById(btn.getAttribute('aria-controls'));
+      const abrir = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', String(abrir));
+      detalle.classList.toggle('abierto', abrir);
+      btn.closest('.item').classList.toggle('activo', abrir);
+    });
+  });
+
+  /* ---------- Filtro de experiencia ---------- */
+  const filtros = document.querySelectorAll('.filtro');
+  const items = document.querySelectorAll('.timeline .item');
+  filtros.forEach(f => f.addEventListener('click', () => {
+    const cat = f.dataset.filtro;
+    filtros.forEach(x => x.setAttribute('aria-pressed', String(x === f)));
+    items.forEach(it => {
+      const coincide = cat === 'todas' || it.dataset.cat.split(' ').includes(cat);
+      it.classList.toggle('oculto', !coincide);
+    });
+  }));
+
+  /* ---------- Copiar correo ---------- */
+  const toast = document.getElementById('toast');
+  let temporizador;
+  const mostrarToast = (texto) => {
+    toast.textContent = texto;
+    toast.classList.add('mostrar');
+    clearTimeout(temporizador);
+    temporizador = setTimeout(() => toast.classList.remove('mostrar'), 2200);
+  };
+  document.querySelectorAll('[data-copiar]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const texto = btn.dataset.copiar;
+      try {
+        await navigator.clipboard.writeText(texto);
+        mostrarToast('Correo copiado');
+      } catch {
+        const area = document.createElement('textarea');
+        area.value = texto;
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+        mostrarToast('Correo copiado');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
